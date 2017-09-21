@@ -1,4 +1,4 @@
-import configs_default
+import config_default
 
 
 class Dict(dict):
@@ -36,10 +36,10 @@ def toDict(d):
         D[k] = toDict(v) if isinstance(v, dict) else v
     return D
 
-configs=configs_default.configs
+configs=config_default.configs
 try:
-   import configs_override
-   configs=merge(configs,configs_override.configs)
+   import config_override
+   configs=merge(configs,config_override.configs)
 except ImportError:
    pass
 
